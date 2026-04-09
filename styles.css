@@ -98,55 +98,6 @@ nav ul li a:hover {
     margin-top: 0px;
 }
 
-/* Lista de experiência */
-.experience-list {
-    list-style: none;
-    margin: 30px 0 0;
-    padding: 0 0 0 8px;
-    border-left: 3px solid #ffd700;
-}
-
-.experience-item {
-    position: relative;
-    margin: 0 0 24px 16px;
-    padding-left: 18px;
-    text-align: left;
-}
-
-.experience-item:last-child {
-    margin-bottom: 0;
-}
-
-.experience-item::before {
-    content: "";
-    position: absolute;
-    left: -26px;
-    top: 7px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #333;
-    border: 2px solid #ffd700;
-}
-
-.experience-item h3 {
-    margin: 0 0 8px;
-}
-
-.experience-period {
-    margin: 0 0 10px;
-    font-weight: bold;
-    color: #555;
-}
-
-.experience-item p {
-    margin: 0 0 10px;
-}
-
-.experience-item p:last-child {
-    margin-bottom: 0;
-}
-
 /* Contato */
 #contato a {
     text-decoration: none;
@@ -180,10 +131,6 @@ footer {
         font-size: 2em;
     }
 
-    .experience-item {
-        margin-left: 12px;
-        padding-left: 14px;
-    }
 }
 
 @media (max-width: 480px) {
