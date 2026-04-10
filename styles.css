@@ -185,6 +185,34 @@ footer {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding: 0 8px;
+        position: relative;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.15);
+    }
+
+    header nav::after {
+        content: "Deslize para o lado para ver o menu completo";
+        display: block;
+        text-align: center;
+        margin-top: 6px;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.82);
+        white-space: nowrap;
+        pointer-events: none;
+    }
+
+    header nav::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    header nav::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+    }
+
+    header nav::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
     }
 
     .top-nav-list {
