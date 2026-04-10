@@ -90,6 +90,10 @@ nav ul li a:hover {
     margin-top: 0px;
 }
 
+#treinamentos h1 {
+    margin-top: 0px;
+}
+
 #experiencia h1 {
     margin-top: 0px;
 }
@@ -135,6 +139,24 @@ nav ul li a:hover {
     border-radius: 6px;
     padding: 7px 10px;
     font-size: 0.92rem;
+    margin-bottom: 0 !important;
+}
+
+.training-list {
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 6px;
+}
+
+.training-list li {
+    background-color: #f7f7f7;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
     margin-bottom: 0 !important;
 }
 
