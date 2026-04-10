@@ -44,6 +44,10 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
+.top-nav-list li a.active-nav {
+    color: #ffd700;
+}
+
 /* Seções de conteúdo */
 .section-content {
     padding: 40px 20px;
@@ -181,6 +185,10 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .top-nav-list li.mobile-nav-hidden {
+        display: none;
+    }
+
     header nav {
         overflow-x: auto;
         overflow-y: hidden;
@@ -230,6 +238,10 @@ footer {
         font-size: 0.9rem;
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 999px;
+    }
+
+    .top-nav-list li a.active-nav {
+        border-color: #ffd700;
     }
 
     .section-content {
