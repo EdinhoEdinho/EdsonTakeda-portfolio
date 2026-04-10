@@ -40,12 +40,14 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.top-nav-list li a.active-nav {
     color: #ffd700;
 }
 
-.top-nav-list li a.active-nav {
-    color: #ffd700;
+@media (hover: hover) and (pointer: fine) {
+    nav ul li a:hover {
+        color: #ffd700;
+    }
 }
 
 /* Seções de conteúdo */
@@ -192,6 +194,7 @@ footer {
     header nav {
         overflow-x: auto;
         overflow-y: hidden;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         padding: 0 8px;
         position: relative;
