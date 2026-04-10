@@ -1,29 +1,35 @@
-// Executa somente após o HTML estar completamente carregado
+// Executa somente apos o HTML estar completamente carregado
 document.addEventListener('DOMContentLoaded', () => {
     // Detecta modo mobile para controlar comportamento do menu superior
     const mobileQuery = window.matchMedia('(max-width: 768px)');
-    // Referência ao header para compensar altura no scroll
+    // Respeita preferencia do usuario por menos animacoes
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Referencia ao header para compensar altura no scroll
     const header = document.querySelector('header');
-    // Todos os links internos do menu (âncoras)
+    // Container com rolagem horizontal do menu
+    const topNavContainer = document.querySelector('header nav');
+    // Todos os links internos do menu (ancoras)
     const navLinks = Array.from(document.querySelectorAll('.top-nav-list a[href^="#"]'));
-    // Seções reais associadas aos links do menu
+    // Secoes reais associadas aos links do menu
     const sections = navLinks
         .map((link) => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
-    // Itens que devem aparecer no mobile apenas após chegar em Experiência
+    // Itens que devem aparecer no mobile apenas apos chegar em Experiencia
     const revealAfterExperienceItems = document.querySelectorAll(
         '.top-nav-list li[data-mobile-reveal="after-experiencia"]'
     );
 
-    // Guarda a seção ativa atual para evitar atualizações desnecessárias
+    // Guarda a secao ativa atual para evitar atualizacoes desnecessarias
     let activeSectionId = '';
+    // Controla a frequencia de atualizacao durante scroll
+    let scrollTicking = false;
 
     // Define quando Skills/Treinamentos devem ser exibidos no mobile
     const shouldRevealMobileItems = (sectionId) => {
         return sectionId === '#experiencia' || sectionId === '#skills' || sectionId === '#treinamentos';
     };
 
-    // Aplica no menu mobile se os itens adicionais ficam visíveis ou ocultos
+    // Aplica no menu mobile se os itens adicionais ficam visiveis ou ocultos
     const applyMobileRevealState = (sectionId) => {
         if (!mobileQuery.matches) {
             return;
@@ -33,6 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         revealAfterExperienceItems.forEach((item) => {
             item.classList.toggle('mobile-nav-hidden', !reveal);
+        });
+    };
+
+    // Centraliza o item ativo no menu horizontal do mobile
+    const centerActiveLinkInMenu = (activeLink) => {
+        if (!topNavContainer || !activeLink) {
+            return;
+        }
+
+        const navRect = topNavContainer.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        const deltaX = (linkRect.left - navRect.left) - (navRect.width - linkRect.width) / 2;
+        const rawTargetLeft = topNavContainer.scrollLeft + deltaX;
+        const maxScrollLeft = Math.max(0, topNavContainer.scrollWidth - topNavContainer.clientWidth);
+        const targetLeft = Math.min(maxScrollLeft, Math.max(0, rawTargetLeft));
+
+        topNavContainer.scrollTo({
+            left: targetLeft,
+            behavior: reducedMotionQuery.matches ? 'auto' : 'smooth'
         });
     };
 
@@ -52,20 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (mobileQuery.matches) {
             const activeLink = navLinks.find((link) => link.getAttribute('href') === sectionId);
-
-            if (activeLink) {
-                activeLink.scrollIntoView({
-                    behavior: 'auto',
-                    inline: 'center',
-                    block: 'nearest'
-                });
-            }
+            centerActiveLinkInMenu(activeLink);
         }
     };
 
-    // Identifica qual seção está ativa com base na rolagem da página
+    // Identifica qual secao esta ativa com base na rolagem da pagina
     const getCurrentSectionId = () => {
-        // Regra para última seção: ao chegar no final da página, ativa Contato
+        // Regra para ultima secao: ao chegar no final da pagina, ativa Contato
         const nearPageBottom =
             window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
 
@@ -93,7 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveNavLink(getCurrentSectionId());
     };
 
-    // Scroll suave para seção, compensando o header fixo
+    // Evita excesso de calculos durante rolagem continua
+    const scheduleUpdateActiveByScroll = () => {
+        if (scrollTicking) {
+            return;
+        }
+
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            scrollTicking = false;
+            updateActiveByScroll();
+        });
+    };
+
+    // Scroll suave para secao, compensando o header fixo
     const scrollToSection = (targetSection) => {
         const headerHeight = header ? header.offsetHeight : 0;
         const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
@@ -104,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Clique no menu: ativa item e navega para a seção correspondente
+    // Clique no menu: ativa item e navega para a secao correspondente
     navLinks.forEach((link) => {
         link.addEventListener('click', (event) => {
             const targetId = link.getAttribute('href');
@@ -127,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileQuery.addListener(updateActiveByScroll);
     }
 
-    // Mantém item ativo sincronizado ao rolar e redimensionar
-    window.addEventListener('scroll', updateActiveByScroll, { passive: true });
+    // Mantem item ativo sincronizado ao rolar e redimensionar
+    window.addEventListener('scroll', scheduleUpdateActiveByScroll, { passive: true });
     window.addEventListener('resize', updateActiveByScroll);
 
-    // Estado inicial ao carregar a página
+    // Estado inicial ao carregar a pagina
     updateActiveByScroll();
 });
