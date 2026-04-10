@@ -98,6 +98,28 @@ nav ul li a:hover {
     margin-top: 0px;
 }
 
+#projeto h1 {
+    margin-top: 0px;
+}
+
+.project-block {
+    background-color: #f7f7f7;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.project-block h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.project-block p {
+    margin: 0;
+    text-align: justify;
+}
+
 .skills-list {
     list-style: none !important;
     margin-left: 0 !important;
