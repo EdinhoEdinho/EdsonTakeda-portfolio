@@ -1,189 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="top-nav-list">
-                <li><a href="#sobre-mim">Sobre Mim</a></li>
-                <li><a href="#formacao">Educação</a></li>
-                <li><a href="#experiencia">Experiência Profissional</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#treinamentos">Treinamentos</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Edson Chiaki Cito Takeda — Embedded Systems, Data Engineering, and Industrial Automation." />
+    <title>Edson Takeda — Industrial Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav__brand" href="#top">Edson Takeda</a>
+        <ul class="nav__links">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-        <section id="sobre-mim" class="section-content">
-            <h1>Sobre Mim</h1>
-            <p>Meu nome é Edson Takeda, tenho 20 anos, sou estudante de Engenharia de Produção pela UFAM e Análise e Desenvolvimento de Sistemas pela UNINTER, possuo experiência em programação, automação de processos, rotinas administrativas, PCP e suporte de TI. Atuo no desenvolvimento de soluções para otimizar processos administrativos e produtivos, com foco em eficiência operacional, integração de dados e melhoria contínua.</p>
-            <p>Tenho perfil analítico, facilidade para aprender rápido e compromisso com entrega de resultados, lidando bem com pressão e prazos. Também valorizo trabalho em equipe, organização e evolução constante, buscando sempre transformar desafios em soluções práticas para o negócio.</p>
-            <div class="about-actions">
-                <a class="cv-button" href="./Curr%C3%ADculo%20-%20Edson_Takeda.pdf" download target="_blank" rel="noopener noreferrer">Baixar currículo</a>
-            </div>
-        </section>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-name">
+        <div class="hero__media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2400&q=80" alt="" width="2400" height="1600" /></div>
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p id="hero-name" class="hero__brand reveal" style="--i: 0">Edson<br />Takeda</p>
+          <h1 class="hero__headline reveal" style="--i: 1">Embedded systems, industrial data, and automation.</h1>
+          <p class="hero__lede reveal" style="--i: 2">Industrial Engineering and Systems Analysis &amp; Development student building practical tools that connect shop-floor operations, data, and business workflows.</p>
+          <div class="hero__actions reveal" style="--i: 3"><a class="btn btn--primary" href="#contact">Get in touch</a><a class="btn btn--ghost" href="#projects">View projects</a></div>
+        </div>
+      </section>
 
-        <section id="formacao" class="section-content">
-            <h1>Formação Acadêmica</h1>
-            <h2>Graduações</h2>
-            <ul>
-                <li><strong>Ensino Médio Completo</strong> [La Salle]</li>
-                <li><strong>Engenharia da Produção</strong> [UFAM] • 2024 - 2028</li>
-                <li><strong>Análise e Desenvolvimento de Sistemas</strong> [UNINTER] • 2024 - 2026</li>
+      <section id="about" class="section section--about" aria-labelledby="about-title">
+        <div class="about">
+          <div class="about__copy">
+            <p class="eyebrow">Profile</p>
+            <h2 id="about-title">Engineering technology for operational visibility.</h2>
+            <p>I work across industrial IT, embedded and field communication, data treatment, process automation, software development, and manufacturing support. My focus is translating engineering and shop-floor requirements into reliable digital solutions.</p>
+            <p>Hands-on with Python, C, SQL Server, Modbus TCP, PLC/CLP support, Power BI, and systems integration — from data acquisition through operational KPIs and traceability.</p>
+          </div>
+          <aside class="about__skills" aria-labelledby="education-title">
+            <h3 id="education-title">Education &amp; languages</h3>
+            <ul class="skill-list">
+              <li>B.Sc. Industrial Engineering · UFAM · 2024–2028</li>
+              <li>Technologist, Systems Analysis &amp; Development · UNINTER · 2024–2026</li>
+              <li>High School Diploma · Centro Educacional La Salle</li>
+              <li>Portuguese native · English C1 / advanced · Japanese basic</li>
             </ul>
+          </aside>
+        </div>
+      </section>
 
-            <h2>Idiomas</h2>
-            <ul>
-                <li><strong>Português:</strong> Nativo</li>
-                <li><strong>Inglês:</strong> Avançado</li>
-                <li><strong>Japonês:</strong> Básico</li>
-            </ul>
-        </section>
+      <section id="experience" class="section section--work" aria-labelledby="experience-title">
+        <div class="section__intro"><p class="eyebrow">Career</p><h2 id="experience-title">Professional experience</h2><p class="section__lede">Technical experience spanning industrial automation, production planning, data, and systems development.</p></div>
+        <ol class="work-list">
+          <li class="work-item reveal" style="--i: 0"><div class="work-item__link"><span class="work-item__index">01</span><div class="work-item__body"><h3>Junior Information Systems Analyst · BIC da Amazônia</h3><p><strong>Current position · August 2026 - Now.</strong> Own the technical lifecycle of information systems that support manufacturing and administrative operations: requirements discovery with process owners, solution design, application development, database modeling, integration, testing, deployment, and production support. Design data flows between shop-floor equipment, operational databases, and business systems; build automated workflows, APIs, and analytical datasets for reliable KPI monitoring. Drive process digitalization by defining technical standards, documenting solutions, improving data quality and traceability, diagnosing integration issues, and translating operational needs into scalable systems.</p><ul class="tags"><li>Systems architecture</li><li>ERP/MES integration</li><li>Data pipelines</li><li>Automation</li><li>Technical support</li></ul></div><span class="work-item__year">August 2026 - Now</span></div></li>
+          <li class="work-item reveal" style="--i: 1"><div class="work-item__link"><span class="work-item__index">02</span><div class="work-item__body"><h3>IT / Engineering Intern · BIC da Amazônia</h3><p>Nov 2025–Jul 2026. Supported the development and validation of software tools for production and administrative areas, contributing to manufacturing-process automation, productivity, and operational visibility. Assisted PLC/CLP and industrial-communication activities; collected and treated machine data; validated data flows and field requirements; and supported systems integration and KPI analytics. Worked with engineering and shop-floor users to document needs, troubleshoot operational issues, test digital tools, and convert process requirements into practical prototypes and support solutions.</p><ul class="tags"><li>PLC/CLP support</li><li>Machine-data collection</li><li>Field validation</li><li>KPI analytics</li><li>Systems support</li></ul></div><span class="work-item__year">2025–2026</span></div></li>
+          <li class="work-item reveal" style="--i: 2"><div class="work-item__link"><span class="work-item__index">03</span><div class="work-item__body"><h3>Production Planning &amp; Control Assistant · Nippon Carbide</h3><p>Apr–Nov 2025. Automated administrative and production workflows and developed internal tools for production planning, order release, delivery follow-up, and process control. Prepared production plans, audited inventory, monitored WIP, analyzed demand and material requirements, and supported continuous improvement through indicator tracking and production-data analysis.</p><ul class="tags"><li>PCP</li><li>WIP</li><li>Production planning</li><li>Process control</li></ul></div><span class="work-item__year">2025</span></div></li>
+          <li class="work-item reveal" style="--i: 3"><div class="work-item__link"><span class="work-item__index">04</span><div class="work-item__body"><h3>Production Planning / Engineering Intern · Nippon Carbide</h3><p>Oct 2024–Apr 2025. Analyzed demand and production requirements, tracked production orders and operational indicators, checked manufacturing-process status, and prepared reports to support planning and execution.</p><ul class="tags"><li>Demand analysis</li><li>Production orders</li><li>Operational reporting</li></ul></div><span class="work-item__year">2024–2025</span></div></li>
+          <li class="work-item reveal" style="--i: 4"><div class="work-item__link"><span class="work-item__index">05</span><div class="work-item__body"><h3>Administrative Apprentice · CTK Embalagens</h3><p>Dec 2021–Feb 2022. Supported document organization, report preparation, and routine administrative operations.</p><ul class="tags"><li>Reporting</li><li>Administration</li></ul></div><span class="work-item__year">2021–2022</span></div></li>
+        </ol>
+      </section>
 
-        <section id="experiencia" class="section-content">
-            <h1>Experiência Profissional</h1>
-            <h2>Experiências</h2>
-            <ul>
-                <li><strong>Aprendiz Administrativo</strong> [<strong>CTK Embalagens</strong>] • Dezembro de 2021 - Fevereiro de 2022 | Organização de documentos, elaboração de relatórios e suporte a rotinas administrativas.</li>
-                <li><strong>Estagiário de PCP/Engenharia</strong> [<strong>Nippon Carbide</strong>] • Outubro de 2024 - Abril de 2025 | Análise de demanda e necessidade, verificação do processo produtivo, acompanhamento de ordens e indicadores e elaboração de relatórios.</li>
-                <li><strong>Assistente de PCP</strong> [<strong>Nippon Carbide</strong>] • Abril de 2025 - Novembro de 2025 | Automação de processos administrativos e produtivos, desenvolvimento de sistemas, abertura de ordens de produção, elaboração do plano de produção, negociação com clientes sobre entregas e prazos, auditoria de estoque, inventário de processo, análise de demanda e necessidade, melhoria contínua e acompanhamento do processo produtivo.<br><br>Membro titular da CIPA gestão 2025-2026.</li>
-                <li><strong>Estagiário de TI/Engenharia</strong> [<strong>BIC da Amazônia</strong>] • Novembro de 2025 - Atualmente | Automação de processos de manufatura e administrativos, desenvolvimento de programas e aplicativos para produção/administração, suporte técnico, CLP/PLC, sistemas embarcados, engenharia e tratamento de dados, integração de sistemas, coleta de dados de máquinas e suporte em analytics para acompanhamento de indicadores.</li>
-            </ul>
-        </section>
+      <section id="skills" class="section section--about" aria-labelledby="skills-title">
+        <div class="about">
+          <div class="about__copy"><p class="eyebrow">Technical stack</p><h2 id="skills-title">From field protocols to traceable data.</h2><p>Tools and technologies used to acquire, process, integrate, and expose operational information across industrial and business systems.</p></div>
+          <aside class="about__skills" aria-label="Technical skills"><ul class="skill-list"><li>Embedded / industrial: C, C++, C#, Modbus TCP, libmodbus, PLC/CLP, EtherNet/IP, Schneider Electric, PLEX, MACH2</li><li>Data engineering: Python, SQL, SQL Server, pyodbc, Power BI, Excel/VBA, traceability datasets and operational KPIs</li><li>Automation / integration: Power Automate, N8N, REST APIs, ERP/MES/WMS integration and workflow digitalization</li><li>Tools / web: Git/GitHub, Linux, Tkinter, VS Code, GCC/GDB, HTML, CSS, JavaScript, PHP and Ruby</li></ul></aside>
+        </div>
+      </section>
 
-        <section id="skills" class="section-content">
-            <h1>Skills</h1>
-            <h2>Competências Técnicas</h2>
-            <ul class="skills-list">
-                <li>Power BI</li>
-                <li>N8N</li>
-                <li>Power Automate</li>
-                <li>Linux</li>
-                <li>Excel Avançado (VBA)</li>
-                <li>SQL/noSQL</li>
-                <li>APIs REST</li>
-                <li>Integração ERP/MES/WMS</li>
-                <li>Modbus, EtherNet/IP</li>
-                <li>Git/GitHub</li>
-                <li>PHP</li>
-                <li>Python</li>
-                <li>Ruby</li>
-                <li>C/C++/C#</li>
-                <li>HTML</li>
-                <li>Java</li>
-                <li>Excel Avançado (VBA)</li>                
-                <li>Kotlin</li>                
-                <li>JavaScript</li>
-                <li>PowerApps</li>
-            </ul>
-        </section>
+      <section id="projects" class="section section--work" aria-labelledby="projects-title">
+        <div class="section__intro"><p class="eyebrow">Selected technical projects</p><h2 id="projects-title">Systems built for industrial use cases.</h2></div>
+        <ol class="work-list">
+          <li class="work-item reveal" style="--i: 0"><a class="work-item__link" href="https://github.com/EdinhoEdinho/Leitor-Modbus-PM5560" target="_blank" rel="noopener noreferrer"><span class="work-item__index">01</span><div class="work-item__body"><h3>Modbus TCP Reader for Schneider Electric PM5560</h3><p>C and libmodbus utility that connects to a PM5560 power meter and reads electrical variables from Holding Registers. Supports runtime configuration for IP, port, unit ID, current/voltage tag addresses, and float32 conversion from two 16-bit registers for terminal diagnostics.</p><ul class="tags"><li>C</li><li>libmodbus</li><li>Modbus TCP</li><li>float32</li></ul></div><span class="work-item__year">GitHub</span><span class="work-item__arrow" aria-hidden="true">→</span></a></li>
+          <li class="work-item reveal" style="--i: 1"><a class="work-item__link" href="https://github.com/EdinhoEdinho/Sistema-de-documentos" target="_blank" rel="noopener noreferrer"><span class="work-item__index">02</span><div class="work-item__body"><h3>Document Management and Compliance System</h3><p>Flask-based application for registering and tracking documents, companies, employees, regulatory standards (NRs), and occupational health certificates (ASOs). Provides expiration alerts, dashboard views, and database-backed CRUD workflows for compliance-document control.</p><ul class="tags"><li>Python</li><li>Flask</li><li>MySQL</li><li>CRUD</li></ul></div><span class="work-item__year">GitHub</span><span class="work-item__arrow" aria-hidden="true">→</span></a></li>
+        </ol>
+      </section>
 
-        <section id="treinamentos" class="section-content">
-            <h1>Treinamentos</h1>
-            <h2>Cursos com Certificação</h2>
-            <ul class="training-list">
-                <li>Informática Avançada</li>
-                <li>Excel Avançado</li>
-                <li>Power BI</li>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>TBO</li>
-                <li>NR 5</li>
-                <li>NR 12</li>
-                <li>NR 20</li>
-                <li>Leitura de Componentes Eletrônicos</li>
-                <li>Automação Industrial</li>
-                <li>Logística</li>
-                <li>Metrologia</li>
-                <li>Técnicas de Soldagem</li>
-                <li>Inspetor de Qualidade</li>
-                <li>Gestão em Produção</li>
-                <li>Matemática Avançada</li>
-            </ul>
-        </section>
+      <section id="training" class="section section--about" aria-labelledby="training-title"><div class="about"><div class="about__copy"><p class="eyebrow">Training</p><h2 id="training-title">Additional technical training.</h2><p>Advanced Computing, Advanced Excel, Power BI, Python, SQL, TBO, NR 5 / CIPA, NR 12, NR 20, Electronic Component Reading, Industrial Automation, Logistics, Metrology, Welding Techniques, Quality Inspection, Production Management, and Advanced Mathematics.</p></div></div></section>
 
-        <section id="projetos" class="section-content">
-            <h1>Projetos em Destaque</h1>
-
-            <article class="project-card">
-                <h2>Sistema de Apontamento Industrial e Rastreabilidade</h2>
-                <p class="project-link"><strong>Link do projeto:</strong> <a href="https://github.com/EdinhoEdinho/Sistema-Industrial-de-Apontamento" target="_blank" rel="noopener noreferrer">https://github.com/EdinhoEdinho/Sistema-Industrial-de-Apontamento</a></p>
-                <button type="button" class="project-toggle" aria-expanded="false" aria-controls="detalhes-apontamento">Ver detalhes</button>
-
-                <div id="detalhes-apontamento" class="project-details">
-                    <div class="project-block">
-                        <h3>Problema</h3>
-                        <p>Na indústria de adesivos onde atuei, o controle operacional era feito manualmente, com registros físicos e sem um padrão digital único. Esse cenário dificultava a rastreabilidade dos quadros, aumentava o risco de erros de preenchimento e perda de informações, além de tornar auditorias e análises de qualidade mais lentas e menos confiáveis.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Solução</h3>
-                        <p>Desenvolvi um sistema desktop em Python (Tkinter + SQL Server) para digitalizar todo o fluxo produtivo, com validações automáticas de campos, controle de status (OK/NG), regras de bloqueio por etapa e rastreabilidade completa por ID do quadro.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Papel e Contribuição</h3>
-                        <p>Atuei de ponta a ponta no projeto, desenvolvendo individualmente toda a solução: levantamento do processo, definição das regras de negócio, modelagem das validações, construção da interface, integração com banco de dados e documentação técnica/funcional.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Conclusão (Resultados)</h3>
-                        <p>O projeto trouxe mais confiabilidade e velocidade para o processo, eliminando dependência de papel, reduzindo erros de preenchimento e aumentando a rastreabilidade operacional. Com os dados centralizados, o acompanhamento de não conformidades e a análise de desempenho passaram a ser mais rápidos e consistentes.</p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <h2>Leitor Modbus PM5560</h2>
-                <p class="project-link"><strong>Link do projeto:</strong> <a href="https://github.com/EdinhoEdinho/Leitor-Modbus-PM5560" target="_blank" rel="noopener noreferrer">https://github.com/EdinhoEdinho/Leitor-Modbus-PM5560</a></p>
-                <button type="button" class="project-toggle" aria-expanded="false" aria-controls="detalhes-modbus">Ver detalhes</button>
-
-                <div id="detalhes-modbus" class="project-details">
-                    <div class="project-block">
-                        <h3>Problema</h3>
-                        <p>A leitura de dados elétricos do medidor PM5560 dependia de ferramentas específicas e configurações manuais, o que dificultava testes rápidos de comunicação e validação de variáveis em campo.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Solução</h3>
-                        <p>Desenvolvi um leitor Modbus TCP em C com libmodbus para conectar ao medidor, ler tags em Holding Registers no formato float32 e exibir correntes e tensões diretamente no terminal com parâmetros configuráveis em tempo de execução.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Papel e Contribuição</h3>
-                        <p>Atuei na implementação completa do programa, incluindo conexão Modbus TCP, leitura de registradores, conversão de dados para float32, estruturação da execução via VSCode e documentação de compilação/uso.</p>
-                    </div>
-
-                    <div class="project-block">
-                        <h3>Conclusão (Resultados)</h3>
-                        <p>O projeto agilizou a validação de comunicação com o PM5560 e tornou o processo de leitura de grandezas elétricas mais prático e reproduzível, reduzindo o tempo de diagnóstico em ambiente industrial.</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <section id="contato" class="section-content">
-            <h1>Entre em Contato</h1>
-            <p>Você pode me contatar diretamente por telefone ou e-mail.</p>
-            <div class="contact-info">
-                <p><strong>E-mail:</strong> <a href="mailto:edinhotakeda@gmail.com">edinhotakeda@gmail.com</a></p>
-                <p><strong>Telefone:</strong> <a href="tel:+5592981367674">(92) 98136-7674</a></p>
-            </div>
-        </section>
+      <section id="contact" class="section section--contact" aria-labelledby="contact-title"><div class="contact"><p class="eyebrow">Contact</p><h2 id="contact-title">Let’s discuss industrial systems.</h2><p class="section__lede">Manaus, Brazil · Available through email, phone, or GitHub.</p><div class="contact__actions"><a class="btn btn--primary" href="mailto:edinhotakeda@gmail.com">edinhotakeda@gmail.com</a><a class="btn btn--ghost" href="tel:+5592981367674">+55 92 98136-7674</a><a class="btn btn--ghost" href="https://github.com/EdinhoEdinho" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Edson Takeda. Todos os direitos reservados.</p>
-    </footer>
-
+    <footer class="site-footer"><p>© <span id="year"></span> Edson Chiaki Cito Takeda.</p><a href="#top">Back to top</a></footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
