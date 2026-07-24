@@ -1,44 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    const projectToggleButtons = document.querySelectorAll('.project-toggle');
+(() => {
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
+  }
 
-    internalLinks.forEach((link) => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
+  const revealTargets = document.querySelectorAll(
+    ".section .reveal, .work-item.reveal"
+  );
 
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+  if (!("IntersectionObserver" in window) || !revealTargets.length) {
+    return;
+  }
 
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) {
+    revealTargets.forEach((el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.animation = "none";
     });
+    return;
+  }
 
-    projectToggleButtons.forEach((button) => {
-        const targetId = button.getAttribute('aria-controls');
-        const details = targetId ? document.getElementById(targetId) : null;
+  // Work items animate on scroll; hero already animates on load via CSS
+  const scrollReveals = document.querySelectorAll(".work-item.reveal");
 
-        if (!details) {
-            return;
-        }
+  scrollReveals.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.animation = "none";
+  });
 
-        button.addEventListener('click', () => {
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = Number(getComputedStyle(el).getPropertyValue("--i")) || 0;
+        el.style.animation = `rise-soft 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards`;
+        el.style.animationDelay = `${delay * 110}ms`;
+        obs.unobserve(el);
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.15 }
+  );
 
-            if (isExpanded) {
-                button.setAttribute('aria-expanded', 'false');
-                button.textContent = 'Ver detalhes';
-                details.classList.remove('is-open');
-                return;
-            }
-
-            button.setAttribute('aria-expanded', 'true');
-            button.textContent = 'Ocultar detalhes';
-            details.classList.add('is-open');
-        });
-    });
-});
+  scrollReveals.forEach((el) => observer.observe(el));
+})();
